@@ -9,7 +9,7 @@ User = get_user_model()
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
-        fields = ('id', 'title', 'slug', 'description')
+        fields = '__all__'
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -20,7 +20,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'text', 'author', 'image', 'group', 'pub_date')
+        fields = '__all__'
         read_only_fields = ('pub_date',)
 
 
@@ -33,5 +33,5 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ('id', 'author', 'post', 'text', 'created')
+        fields = '__all__'
         read_only_fields = ('created',)
